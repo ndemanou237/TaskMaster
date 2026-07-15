@@ -19,16 +19,23 @@ class TacheForm(forms.ModelForm):
                     'class': 'w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500'
                     }
             ),
-            'date_echeance': forms.Textarea(
-                attrs={
-                    
-                    'class': 'w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500'
-                    }
-            ),
-            'categorie': forms.Textarea(
+            'titre': forms.TextInput(
                 attrs={
                     
                     'class': 'w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500'
                     }
             )
+            # 'categorie': forms.Textarea(
+            #     attrs={
+                    
+            #         'class': 'w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500'
+            #         }
+            # )
         }
+
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+           
+            self.fields['categorie'].widget.attrs.update({
+                'class': 'w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500'
+            })

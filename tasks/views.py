@@ -14,7 +14,7 @@ def liste_tache(request):
     context = {
         'taches':taches
     }
-    return render(request, 'task/dashboard.html', context)
+    return render(request, 'tasks/dashboard.html', context)
 
 #faire quitter une tache a terminé dde l'utilisateur connecté et le redirige vers le liste des taches
 @login_required
@@ -49,12 +49,12 @@ def connexion(request):
             user = form.get_user()
             login(request, user)
             return redirect('liste_taches')
-        else:
-            form = AuthenticationForm()
+    else:
+        form = AuthenticationForm()
         context = {
             'form':form
         }    
-        return render(request, 'tasks/connexion.html', context)    
+    return render(request, 'tasks/connexion.html', context)    
     
 def deconnexion(request):
     logout(request)

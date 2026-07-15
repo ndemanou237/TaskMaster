@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import Tache, Categorie
 
-# Register your models here.
+admin.site.register(Tache)
+admin.site.register(Categorie)

@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "src/output.css" %}">
+</head>
+<body>
+    <div class="max-w-sm mx-auto mt-20 p-6 bg-white rounded shadow-lg">
+        <h2 class="text-xl font-bold mb-4">Connexion</h2>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="w-full bg-blue-600 text-white py-2 mt-4 rounded">Se connecter</button>
+        </form>
+    </div>
+    
+</body>
+</html>
