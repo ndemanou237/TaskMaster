@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 
 class Categorie(models.Model):
-    name = models.CharField(max_lenght=100)
+    name = models.CharField(max_length=100)
     def __str__(self):
         return self.name
 
